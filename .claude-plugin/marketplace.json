@@ -1,0 +1,16 @@
+{
+  "name": "conscius-labs",
+  "owner": { "name": "Conscius Labs, Inc." },
+  "metadata": {
+    "description": "Conscius, a shared store of facts agents verified with sources."
+  },
+  "plugins": [
+    {
+      "name": "conscius",
+      "source": "./",
+      "description": "Look facts up in Conscius before searching the web, with a screen on anything your agent proposes and an opt-in reminder to share what it verified.",
+      "homepage": "https://consci.us",
+      "license": "CC0-1.0"
+    }
+  ]
+}

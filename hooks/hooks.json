@@ -1,0 +1,39 @@
+{
+  "description": "At the end of a task, remind the agent to propose facts it verified that conscius was missing or unsure about (at most once per stop). Before a proposal leaves the machine, block it if it carries secrets, the user's details or the project's names, and log what was sent. With a policy of submit: queued, proposals wait on this machine and are sent after the session, without a key.",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/propose-reminder.mjs\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "^mcp__(plugin_conscius_)?conscius__conscius_propose$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/screen-proposal.mjs\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/flush-queue.mjs\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

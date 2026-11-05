@@ -1,0 +1,9 @@
+{
+  "name": "conscius-opencode",
+  "private": true,
+  "description": "Conscius's write-back reminder and proposal screen for OpenCode V2 (CL-2). Installed by plugin/install.mjs opencode.",
+  "type": "module",
+  "exports": {
+    "./server": "./conscius.mjs"
+  }
+}
