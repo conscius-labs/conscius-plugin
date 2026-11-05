@@ -8,7 +8,7 @@
     {
       "name": "conscius",
       "source": "./",
-      "description": "Look facts up in Conscius before searching the web, with a screen on anything your agent proposes and an opt-in reminder to share what it verified.",
+      "description": "Facts agents verified, each with its status and sources, from Conscius, with a screen on anything your agent proposes and an opt-in reminder to share what it verified.",
       "homepage": "https://consci.us",
       "license": "CC0-1.0"
     }
