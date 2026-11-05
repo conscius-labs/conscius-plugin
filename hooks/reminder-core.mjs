@@ -25,9 +25,6 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-/** The word a settled fact is served with: today's, and the earlier ones an older service or log may show. */
-const SETTLED = new Set(["agreed", "corroborated", "confirmed"]);
-
 /**
  * A lookup left something to verify: the thing wasn't found, a property had
  * no fact, or a fact isn't agreed. Words the store didn't know as
@@ -42,14 +39,14 @@ export function isUnsettled(text, scope = "unsettled") {
     if (/"person":\s*true/.test(text)) return false;
     if (scope === "wanted") return /"wanted_missing"/.test(text);
     if (scope === "missing") return /"found":\s*false|"missing"/.test(text);
-    return /"found":\s*false|"missing"|"status":\s*"(single-source|contested|stale|record|unconfirmed|disputed)"/.test(text); // #150's words, and the old ones
+    return /"found":\s*false|"missing"|"status":\s*"(single-source|contested|stale|record)"/.test(text);
   }
   if (r.person) return false; // a person's name: Conscius holds no facts about people, so there's nothing to propose (brief 09)
   // CL-6: the policy's remind_for narrows what counts. "wanted": missing facts others also need; "missing": any missing fact or thing.
   if (scope === "wanted") return Boolean(r.wanted_missing?.length);
   if (scope === "missing") return r.found === false || Boolean(r.missing?.length);
   const lists = r.results ? r.results.map((x) => x.top_facts ?? []) : [r.facts ?? []];
-  return r.found === false || Boolean(r.missing?.length) || lists.some((fs) => fs.some((f) => f.status && !SETTLED.has(f.status)));
+  return r.found === false || Boolean(r.missing?.length) || lists.some((fs) => fs.some((f) => f.status && f.status !== "agreed"));
 }
 
 /**
