@@ -25,9 +25,12 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+/** The word a settled fact is served with: today's, and the earlier ones an older service or log may show. */
+const SETTLED = new Set(["agreed", "corroborated", "confirmed"]);
+
 /**
  * A lookup left something to verify: the thing wasn't found, a property had
- * no fact, or a fact isn't corroborated. Words the store didn't know as
+ * no fact, or a fact isn't agreed. Words the store didn't know as
  * properties ("unmatched") don't count: they're usually other names for a
  * property it answered (brief 22 §2).
  */
@@ -46,7 +49,7 @@ export function isUnsettled(text, scope = "unsettled") {
   if (scope === "wanted") return Boolean(r.wanted_missing?.length);
   if (scope === "missing") return r.found === false || Boolean(r.missing?.length);
   const lists = r.results ? r.results.map((x) => x.top_facts ?? []) : [r.facts ?? []];
-  return r.found === false || Boolean(r.missing?.length) || lists.some((fs) => fs.some((f) => f.status && f.status !== "corroborated" && f.status !== "confirmed"));
+  return r.found === false || Boolean(r.missing?.length) || lists.some((fs) => fs.some((f) => f.status && !SETTLED.has(f.status)));
 }
 
 /**

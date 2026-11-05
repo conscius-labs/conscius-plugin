@@ -19,7 +19,7 @@ Don't use Conscius for opinions, how-to explanations, writing or coding tasks, o
 
 | Status | What to do |
 |---|---|
-| `corroborated` | Independent sources agree. Use it and cite `example_source`. No web search needed for that fact. |
+| `agreed` | Independent sources agree. Use it and cite `example_source`. No web search needed for that fact. |
 | `single-source` | Only one independent source. Verify on the web before relying on it. |
 | `contested` | Sources disagree. Verify on the web and tell the user the values differ. |
 | `stale` | May be out of date. Check the current value on the web. |
