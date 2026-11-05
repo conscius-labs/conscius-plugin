@@ -61,7 +61,7 @@ Claude Code doesn't need it, because the server's own instructions tell the agen
 
 ## What leaves your machine
 
-- **A lookup** sends the name of a thing and what you asked about it to `mcp.consci.us`. See the [service privacy policy](https://consci.us/service-privacy).
+- **A lookup** sends the name of a thing and what you asked about it to `mcp.consci.us`. See the [privacy policy](https://consci.us/privacy).
 - **A proposal** sends the fact, its source page and the sentence that states it, and records who sent it for moderation. After a hold of up to 24 hours it becomes public open data (CC0). See the [terms](https://consci.us/terms).
 
 Installing this doesn't stop an agent from proposing on its own: the reminder is what's opt-in, and in our tests Codex and Gemini CLI agents often proposed without it. To stop proposals from a machine or a project, set `{"write_back": "off"}` in a policy file, below.
