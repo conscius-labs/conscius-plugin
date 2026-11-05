@@ -41,8 +41,8 @@ node conscius-plugin/install.mjs codex --write
 
 | Tool | Installer name | It writes | You then | How far it's been tested |
 |---|---|---|---|---|
-| Codex CLI | `codex` | `~/.codex/hooks.json`, and the skill in `~/.codex/skills/` | Add `[mcp_servers.conscius]` with `url = "https://mcp.consci.us/mcp"` to `~/.codex/config.toml`, and trust the hooks with `/hooks` | Run in the real CLI, against a local server |
-| Gemini CLI | `gemini` | `~/.gemini/settings.json`, with the server, and the `/conscius:contribute` command | Nothing | Run in the real CLI, against a local server |
+| Codex CLI | `codex` | `~/.codex/hooks.json`, and the skill in `~/.codex/skills/` | Add `[mcp_servers.conscius]` with `url = "https://mcp.consci.us/mcp"` to `~/.codex/config.toml`, and trust the hooks with `/hooks` | Run in the real CLI against the live service, without the `/hooks` prompt (headless) |
+| Gemini CLI | `gemini` | `~/.gemini/settings.json`, with the server, and the `/conscius:contribute` command | Nothing | Run in the real CLI against the live service (headless) |
 | Cursor | `cursor` | `~/.cursor/hooks.json` | Add `https://mcp.consci.us/mcp` in Cursor's MCP settings | **Not yet run in Cursor,** built from its docs |
 | GitHub Copilot CLI | `copilot` | `~/.copilot/hooks/conscius.json` | Add `https://mcp.consci.us/mcp` in Copilot's MCP settings | **Not yet run in Copilot,** built from its docs |
 | OpenCode V2 (2.2 and later) | `opencode` | `~/.config/opencode/opencode.json`, with the server | Nothing | **Not yet run in OpenCode,** built from its source; the hook it uses is marked experimental |
@@ -64,7 +64,7 @@ Claude Code doesn't need it, because the server's own instructions tell the agen
 - **A lookup** sends the name of a thing and what you asked about it to `mcp.consci.us`. See the [service privacy policy](https://consci.us/service-privacy).
 - **A proposal** sends the fact, its source page and the sentence that states it, and records who sent it for moderation. After a hold of up to 24 hours it becomes public open data (CC0). See the [terms](https://consci.us/terms).
 
-Installing this doesn't stop an agent from proposing on its own: the reminder is what's opt-in. To stop proposals from a machine or a project, set `{"write_back": "off"}` in a policy file, below.
+Installing this doesn't stop an agent from proposing on its own: the reminder is what's opt-in, and in our tests Codex and Gemini CLI agents often proposed without it. To stop proposals from a machine or a project, set `{"write_back": "off"}` in a policy file, below.
 
 ## The write-back policy
 
