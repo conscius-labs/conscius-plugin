@@ -33,6 +33,8 @@ Then ask your agent something, such as "Check Conscius: how tall is Mount Everes
 
 Claude Code keeps the key in your system's secure storage, not in a settings file. To change it, configure it again. To remove it, uninstall and reinstall the plugin.
 
+With a key, your agent can share facts it verifies unless you turn that off on the [Account page](https://app.consci.us/account). A company can turn it off for everyone, or set a default its members can opt into.
+
 If you already added the server with `claude mcp add`, remove that entry so your agent doesn't see the tools twice: `claude mcp remove conscius`.
 
 ## Other tools
@@ -75,6 +77,8 @@ Claude Code doesn't need it, because the server's own instructions tell the agen
 Installing this doesn't stop an agent from proposing on its own: the reminder is what's opt-in, and in our tests Codex and Gemini CLI agents often proposed without it. To stop proposals from a machine or a project, set `{"write_back": "off"}` in a policy file, below.
 
 ## The write-back policy
+
+With a key there's a second, server-side setting: a person's choice on the console's Account page, and a company's rule or default. Sharing is on until one of them turns it off, and nobody is asked up front. The plugin's policy applies first, on the machine.
 
 A JSON file decides what may be proposed from this machine. The first one found wins:
 
