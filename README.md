@@ -25,6 +25,14 @@ claude plugin install conscius@conscius-labs
 
 Then ask your agent something, such as "Check Conscius: how tall is Mount Everest?"
 
+**A higher limit (optional).** Conscius works with no account. For more lookups, make a free key at [app.consci.us](https://app.consci.us), then run this inside Claude Code and restart it:
+
+```text
+/plugin configure conscius@conscius-labs
+```
+
+Claude Code keeps the key in your system's secure storage, not in a settings file. To change it, configure it again. To remove it, uninstall and reinstall the plugin.
+
 If you already added the server with `claude mcp add`, remove that entry so your agent doesn't see the tools twice: `claude mcp remove conscius`.
 
 ## Other tools

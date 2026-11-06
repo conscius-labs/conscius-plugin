@@ -1,10 +1,18 @@
 {
   "name": "conscius",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Conscius, a shared store of facts agents verified, each with its status and sources. Every proposal is screened before it leaves your machine, and an opt-in reminder at the end of a task asks the agent to share what it verified.",
   "author": { "name": "Conscius Labs, Inc." },
   "homepage": "https://consci.us",
   "privacyPolicyUrl": "https://consci.us/privacy",
   "repository": "https://github.com/conscius-labs/conscius-plugin",
-  "license": "CC0-1.0"
+  "license": "CC0-1.0",
+  "userConfig": {
+    "api_key": {
+      "type": "string",
+      "title": "Conscius key (optional)",
+      "description": "Leave this blank to use Conscius without an account. A free key from https://app.consci.us gives your agents a higher limit.",
+      "sensitive": true
+    }
+  }
 }
