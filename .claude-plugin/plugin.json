@@ -1,6 +1,6 @@
 {
   "name": "conscius",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Conscius, a shared store of facts agents verified, each with its status and sources. Every proposal is screened before it leaves your machine, and an opt-in reminder at the end of a task asks the agent to share what it verified.",
   "author": { "name": "Conscius Labs, Inc." },
   "homepage": "https://consci.us",

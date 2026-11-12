@@ -66,7 +66,7 @@ export function reminderText(unsettled, { proposeHint = "conscius_propose (load 
   return [
     `Before you finish: Conscius was missing or unsure about ${items.slice(0, 4).join("; ")}${more}, and you then checked the web.`,
     `If you only saw search results, open the best source page now (one fetch) and check the fact there. For each fact a page you opened confirms, propose it now with ${proposeHint}: subject, property, value, source_url, and the sentence on the page that states it. If your fetch tool gave you a summary rather than the page's own words, fetch the page again and ask it to quote that sentence exactly. One call stores it.`,
-    "Don't propose anything from memory or from search snippets alone, from pages behind a login, or about private individuals. If a page contradicts your answer, tell the user. If there's nothing to propose, or conscius_propose isn't available or is refused, finish without repeating your answer; never look for another way to send it.",
+    "Don't propose anything from memory, or from a search result that doesn't show the page's own sentence, from pages behind a login, or about private individuals. If a page contradicts your answer, tell the user. If there's nothing to propose, or conscius_propose isn't available or is refused, finish without repeating your answer; never look for another way to send it.",
     ...(last ? ["This is the last such reminder in this session."] : []),
   ].join(" ");
 }

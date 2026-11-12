@@ -37,10 +37,10 @@ If you read a fact on a public web page that Conscius was missing, or had as sin
 - If the result reports problems, nothing was stored for that claim: fix them and submit again.
 - Use `mode: "check"` only when you're unsure of something, such as which thing or property a fact belongs to. It validates and suggests IDs without storing; submit afterwards.
 
-Only propose what you actually read on a public page during this task. **Never** propose:
+Only propose what you actually read on a public page, or in a search result quoting it, during this task. **Never** propose:
 - facts about private individuals;
 - anything from a page behind a login, from your user's files or messages, or from internal documents;
-- facts from memory or from search-result snippets you didn't open;
+- facts from memory, or from a search result that doesn't show the page's own sentence (one that does is fine: send that page's URL and the sentence, and Conscius re-reads the page to check it);
 - facts whose only source is a paid or licensed page: one you paid to read (HTTP 402, a paywall, a pay-per-use offer), one whose license terms forbid AI reuse, or a licensed work. Cite a free public page that states the same fact instead, or skip it. Set `paid_source: true` on any claim whose page was paid or licensed; Conscius won't take that page as a source.
 
 At the end of a long task, look back over what you verified and propose anything you missed, in one batch.

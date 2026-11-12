@@ -4,7 +4,7 @@
       "type": "http",
       "url": "https://mcp.consci.us/mcp",
       "headers": {
-        "X-Conscius-Plugin": "claude-code/0.2.6",
+        "X-Conscius-Plugin": "claude-code/0.2.7",
         "Authorization": "Bearer ${user_config.api_key}"
       }
     }

@@ -116,7 +116,9 @@ export function opencodeConfig(existing = {}) {
 export function geminiConfig(existing = {}) {
   return {
     ...existing,
-    mcpServers: { ...existing.mcpServers, conscius: { httpUrl: MCP_URL, ...existing.mcpServers?.conscius } },
+    // A conscius entry already there is left as it is: `gemini mcp add` writes `url` and `type`, and an added `httpUrl`
+    // would win over them, moving a signed-in /mcp/account entry back to the anonymous address.
+    mcpServers: { ...existing.mcpServers, conscius: existing.mcpServers?.conscius ?? { httpUrl: MCP_URL } },
     hooks: merge(existing.hooks, {
       AfterAgent: [{ hooks: [{ type: "command", name: "conscius-reminder", command: cmd("gemini/after-agent.mjs"), timeout: 10000 }] }],
       BeforeTool: [{ matcher: "conscius_propose$", hooks: [{ type: "command", name: "conscius-screen", command: cmd("gemini/before-tool.mjs"), timeout: 10000 }] }],
