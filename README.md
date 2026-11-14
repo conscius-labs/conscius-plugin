@@ -37,6 +37,16 @@ With a key, your agent can share facts it verifies unless you turn that off on t
 
 If you already added the server with `claude mcp add`, remove that entry so your agent doesn't see the tools twice: `claude mcp remove conscius`.
 
+## Gemini CLI, Cursor and Antigravity, as an extension or plugin
+
+This repository is also a Gemini CLI extension, a Cursor plugin and an Antigravity plugin. Each connects to `https://mcp.consci.us/mcp/account`, which signs you in to a free Conscius account the first time, and adds the skill. They don't add the screen or the reminder: for those, use the installer below.
+
+```bash
+gemini extensions install https://github.com/conscius-labs/conscius-plugin
+```
+
+In Cursor, the plugin goes through the Cursor Marketplace once it's listed. Until then, [add the server to Cursor](https://cursor.com/en/install-mcp?name=conscius&config=eyJ1cmwiOiJodHRwczovL21jcC5jb25zY2kudXMvbWNwL2FjY291bnQifQ%3D%3D) in one click. In VS Code: [add the server to VS Code](https://vscode.dev/redirect/mcp/install?name=conscius&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.consci.us%2Fmcp%2Faccount%22%7D).
+
 ## Other tools
 
 These need Node.js. Clone this repository somewhere you'll keep it, since the hooks run from that folder, then run the installer for your tool. Without `--write` it prints what it would write. It keeps your other settings.
