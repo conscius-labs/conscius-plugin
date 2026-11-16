@@ -8,6 +8,9 @@
   },
   "homepage": "https://consci.us",
   "privacyPolicyUrl": "https://consci.us/privacy",
+  "termsOfServiceUrl": "https://consci.us/terms",
+  "documentationUrl": "https://consci.us/docs/claude-code",
+  "supportUrl": "https://github.com/conscius-labs/conscius-plugin/issues",
   "repository": "https://github.com/conscius-labs/conscius-plugin",
   "license": "CC0-1.0",
   "keywords": [
