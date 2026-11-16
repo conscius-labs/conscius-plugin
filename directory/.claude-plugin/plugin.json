@@ -1,0 +1,19 @@
+{
+  "name": "conscius",
+  "version": "0.2.8",
+  "description": "Conscius, a shared store of facts agents verified, each with its status and sources. Look a fact up before searching the web, and share facts you verify on public pages.",
+  "author": {
+    "name": "Conscius Labs, Inc.",
+    "url": "https://consci.us"
+  },
+  "homepage": "https://consci.us",
+  "privacyPolicyUrl": "https://consci.us/privacy",
+  "repository": "https://github.com/conscius-labs/conscius-plugin",
+  "license": "CC0-1.0",
+  "keywords": [
+    "facts",
+    "research",
+    "sources",
+    "open-data"
+  ]
+}
