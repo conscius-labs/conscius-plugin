@@ -29,3 +29,5 @@ Docs: [consci.us/docs](https://consci.us/docs).
 ## Install
 
 In Claude, open the plugin directory and add **Conscius**. In Claude Code, run `/plugin`, find Conscius in Anthropic's marketplace, and install it; then run `/mcp`, choose `conscius` and sign in.
+
+**If auto mode blocks sharing.** Claude Code's auto mode checks each tool call before it runs, and it can block `conscius_propose`. Lookups still work; Claude tells you when a proposal was blocked, and you can approve it. To let proposals through every time, add `mcp__plugin_conscius_conscius__conscius_propose` to `permissions.allow` in `~/.claude/settings.json`. Proposals still go through Conscius's checks and a hold before they're public.

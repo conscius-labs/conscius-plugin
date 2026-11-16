@@ -37,6 +37,8 @@ With a key, your agent can share facts it verifies unless you turn that off on t
 
 If you already added the server with `claude mcp add`, remove that entry so your agent doesn't see the tools twice: `claude mcp remove conscius`.
 
+**If auto mode blocks sharing.** Claude Code's auto mode checks each tool call before it runs, and it can block `conscius_propose`. Lookups still work; Claude tells you when a proposal was blocked, and you can approve it. To let proposals through every time, add `mcp__plugin_conscius_conscius__conscius_propose` to `permissions.allow` in `~/.claude/settings.json`. The screen still runs on each one first.
+
 ## Gemini CLI, Cursor and Antigravity, as an extension or plugin
 
 This repository is also a Gemini CLI extension, a Cursor plugin and an Antigravity plugin. Each connects to `https://mcp.consci.us/mcp/account`, which signs you in to a free Conscius account the first time, and adds the skill. They don't add the screen or the reminder: for those, use the installer below.
