@@ -5,7 +5,7 @@
 Each fact has a status:
 
 - **agreed:** independent sources agree
-- **single-source:** one source, worth verifying
+- **reported:** one source, worth verifying
 - **contested:** sources disagree
 - **stale:** may be out of date
 - **record:** from Wikidata's community record, not checked by Conscius

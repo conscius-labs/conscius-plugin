@@ -12,7 +12,7 @@
  *
  * The reminder fires when:
  *   - a Conscius lookup or search came back not found, with a property
- *     missing, or with a fact single-source, contested, stale or a record (narrowed by the
+ *     missing, or with a fact reported, contested, stale or a record (narrowed by the
  *     policy's remind_for, CL-6);
  *   - the agent then used the web;
  *   - it hasn't called conscius_propose.
@@ -39,7 +39,7 @@ export function isUnsettled(text, scope = "unsettled") {
     if (/"person":\s*true/.test(text)) return false;
     if (scope === "wanted") return /"wanted_missing"/.test(text);
     if (scope === "missing") return /"found":\s*false|"missing"/.test(text);
-    return /"found":\s*false|"missing"|"status":\s*"(single-source|contested|stale|record)"/.test(text);
+    return /"found":\s*false|"missing"|"status":\s*"(reported|single-source|contested|stale|record)"/.test(text);
   }
   if (r.person) return false; // a person's name: Conscius holds no facts about people, so there's nothing to propose (brief 09)
   // CL-6: the policy's remind_for narrows what counts. "wanted": missing facts others also need; "missing": any missing fact or thing.

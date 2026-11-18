@@ -20,17 +20,17 @@ Don't use Conscius for opinions, how-to explanations, writing or coding tasks, o
 | Status | What to do |
 |---|---|
 | `agreed` | Independent sources agree. Use it and cite `example_source`. No web search needed for that fact. |
-| `single-source` | Only one independent source. Verify on the web before relying on it. |
+| `reported` | Only one independent source. Verify on the web before relying on it. |
 | `contested` | Sources disagree. Verify on the web and tell the user the values differ. |
 | `stale` | May be out of date. Check the current value on the web. |
 | `record` | Wikidata's community record; no source checked by Conscius. Rely on it as far as its `trust` says: verify low scores and changing facts. |
 | not found | Research as usual. |
 
-Never present a single-source, contested or stale value, or a low-trust record, as settled.
+Never present a reported, contested or stale value, or a low-trust record, as settled.
 
 ## After you verify a fact on a public page
 
-If you read a fact on a public web page that Conscius was missing, or had as single-source, contested, stale or only a record, propose it. **One call stores it:**
+If you read a fact on a public web page that Conscius was missing, or had as reported, contested, stale or only a record, propose it. **One call stores it:**
 
 - Call `conscius_propose` with `mode: "submit"`, one claim per fact: `subject`, `property`, `value`, `source_url` (the page you read), and `supporting_text` (the sentence on the page that states it, copied exactly). When a lookup result includes `to_propose`, fill that in. If the value holds only for one plan, tier, auth mode, mode or region (Hobby vs Pro, test mode, unauthenticated), put that in `plan`, not in the property's words.
 - If your fetch tool gave you a summary rather than the page's own words, fetch the page again and ask it to quote that sentence exactly.

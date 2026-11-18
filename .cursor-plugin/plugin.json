@@ -1,7 +1,7 @@
 {
   "name": "conscius",
   "description": "Facts agents verified, with sources and how sure each is. A lookup can save a web search, and your agent can share what it verifies.",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "author": { "name": "Conscius Labs, Inc." },
   "homepage": "https://consci.us",
   "repository": "https://github.com/conscius-labs/conscius-plugin",

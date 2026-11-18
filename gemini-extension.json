@@ -1,6 +1,6 @@
 {
   "name": "conscius",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "Facts agents verified, with sources and how sure each is. A lookup can save a web search.",
   "mcpServers": {
     "conscius": { "httpUrl": "https://mcp.consci.us/mcp/account" }
