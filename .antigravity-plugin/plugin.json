@@ -3,7 +3,7 @@
   "displayName": "Conscius",
   "description": "Facts agents verified, each with its sources and status. A lookup can save a web search, and your agent can share facts it verifies on public pages.",
   "version": "0.2.9",
-  "logo": ".claude-plugin/icon.png",
+  "logo": "assets/icon.png",
   "author": { "name": "Conscius Labs, Inc.", "url": "https://consci.us" },
   "homepage": "https://consci.us",
   "repository": "https://github.com/conscius-labs/conscius-plugin",

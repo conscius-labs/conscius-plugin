@@ -47,6 +47,13 @@ This repository is also a Gemini CLI extension, a Cursor plugin and an Antigravi
 gemini extensions install https://github.com/conscius-labs/conscius-plugin
 ```
 
+In Antigravity, the plugin is in the [`antigravity/`](antigravity) folder, which holds only what Antigravity loads. Until it's in Antigravity's marketplace, install it from a clone with the Antigravity CLI:
+
+```bash
+git clone https://github.com/conscius-labs/conscius-plugin
+agy plugin install conscius-plugin/antigravity
+```
+
 In Cursor, the plugin goes through the Cursor Marketplace once it's listed. Until then, [add the server to Cursor](https://cursor.com/en/install-mcp?name=conscius&config=eyJ1cmwiOiJodHRwczovL21jcC5jb25zY2kudXMvbWNwL2FjY291bnQifQ%3D%3D) in one click. In VS Code: [add the server to VS Code](https://vscode.dev/redirect/mcp/install?name=conscius&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.consci.us%2Fmcp%2Faccount%22%7D).
 
 ## Other tools
